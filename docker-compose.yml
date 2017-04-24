@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  miinto.productcentre.locationstatus.api:
+    image: miinto.productcentre.locationstatus.api
+    build:
+      context: ./Miinto.ProductCentre.LocationStatus.Api
+      dockerfile: Dockerfile
+
+  miinto.productcentre.locationstatus.worker:
+    image: miinto.productcentre.locationstatus.worker
+    build:
+      context: ./Miinto.ProductCentre.LocationStatus.Worker
+      dockerfile: Dockerfile
