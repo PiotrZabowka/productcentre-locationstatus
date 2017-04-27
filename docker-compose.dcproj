@@ -1,10 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk">
   <PropertyGroup Label="Globals">
-    <ProjectGuid>778bf796-efb7-49f6-aab8-061e2c5289cb</ProjectGuid>
-    <DockerLaunchBrowser>True</DockerLaunchBrowser>
-    <DockerServiceUrl>http://localhost:{ServicePort}/api/values</DockerServiceUrl>
-    <DockerServiceName>miinto.productcentre.locationstatus.api</DockerServiceName>
+    <ProjectGuid>9012c637-df5e-4466-8485-452ce718ddd4</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.ci.build.yml" />

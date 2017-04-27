@@ -1,8 +1,5 @@
 version: '2'
-
 services:
-  miinto.productcentre.locationstatus.api:
+  miinto.productcentre.locationstatus.worker:
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
+      - ASPNETCORE_ENVIRONMENT=dev

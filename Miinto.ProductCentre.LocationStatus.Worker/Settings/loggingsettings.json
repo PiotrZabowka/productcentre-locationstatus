@@ -1,0 +1,29 @@
+{
+  "Logging": {
+    "Using": [ "Serilog.Sinks.Literate" ],
+    "MinimumLevel": {
+      "Default": "Debug",
+      "Override": {
+        "Microsoft": "Information",
+        "System": "Information"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "LiterateConsole",
+        "Args": {
+          "restrictedToMinimumLevel": "Information",
+          "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} ({ThreadId}) [{Level:u3}] {Message}{NewLine}{Exception}"
+        }
+      },
+      {
+        "Name": "RollingFile",
+        "Args": {
+          "pathFormat": "c://Logs//Miinto.ProductCentre.LocationStatus.Worker-%ASPNETCORE_ENVIRONMENT%-{Date}.txt",
+          "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} ({ThreadId}) [{Level:u3}] {Message}{NewLine}{Exception}"
+        }
+      }
+    ],
+    "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId" ]
+  }
+}

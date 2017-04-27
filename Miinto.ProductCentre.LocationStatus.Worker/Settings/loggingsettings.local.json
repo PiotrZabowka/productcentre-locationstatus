@@ -1,0 +1,10 @@
+{
+  "Logging": {
+    "WriteTo": [
+      {
+        "Name": "LiterateConsole",
+        "Args": { "restrictedToMinimumLevel": "Debug" }
+      }
+    ]
+  }
+}

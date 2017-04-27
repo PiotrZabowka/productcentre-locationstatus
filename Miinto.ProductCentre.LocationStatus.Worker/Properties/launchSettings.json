@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Miinto.ProductCentre.LocationStatus.Worker": {
+      "commandName": "Project",
+      "commandLineArgs": "Staging",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "local"
+      }
+    }
+  }
+}
