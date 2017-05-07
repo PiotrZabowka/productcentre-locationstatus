@@ -47,12 +47,12 @@ namespace Miinto.Bus.Core
 
         public void SetupExchange(string exchangeName)
         {
-            this.channel.ExchangeDeclare(exchangeName, type: ExchangeType.Fanout);
+            this.channel.ExchangeDeclare(exchangeName, ExchangeType.Fanout, true);
         }
 
         public void SetupExchangeWithQueue(string exchangeName, string queueName)
         {
-            this.channel.ExchangeDeclare(exchangeName, type: ExchangeType.Fanout);
+            this.channel.ExchangeDeclare(exchangeName, ExchangeType.Fanout, true);
             this.channel.QueueBind(queue: queueName,
                                  exchange: exchangeName,
                                  routingKey: "");
