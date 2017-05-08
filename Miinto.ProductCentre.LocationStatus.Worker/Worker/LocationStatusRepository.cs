@@ -28,7 +28,7 @@ namespace Miinto.ProductCentre.LocationStatus.Worker
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.CommandText = "update_multiple_location_statuses";
 
-                    var messagesJson = JsonConvert.SerializeObject(updateRequests.ToArray());
+                    var messagesJson = JsonConvert.SerializeObject(updateRequests.OrderBy(r => r.LocationId).ToArray());
                     cmd.Parameters.AddWithValue("@messages", NpgsqlDbType.Json, messagesJson);
 
                     await cmd.ExecuteNonQueryAsync();
@@ -47,7 +47,7 @@ namespace Miinto.ProductCentre.LocationStatus.Worker
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.CommandText = "update_multiple_location_status_session_date";
 
-                    var messagesJson = JsonConvert.SerializeObject(updateRequests.ToArray());
+                    var messagesJson = JsonConvert.SerializeObject(updateRequests.OrderBy(r => r.SessionId).ToArray());
                     cmd.Parameters.AddWithValue("@messages", NpgsqlDbType.Json, messagesJson);
 
                     await cmd.ExecuteNonQueryAsync();
